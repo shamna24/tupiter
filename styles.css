@@ -356,12 +356,16 @@ h1 .accent {
   position: relative;
   z-index: 5;
   animation: float-slow 4s ease-in-out infinite;
+  background: transparent !important;
+  box-shadow: none !important;
+  left: 20px;
 }
 .hero-mockup {
-  width: 100%;
-  max-width: 520px;
+  width: 115%;
+  max-width: none;
   height: auto;
-  filter: drop-shadow(0 20px 50px rgba(26, 95, 189, 0.15));
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4)) !important;
 }
 
 @keyframes float-slow {
@@ -719,7 +723,12 @@ h1 .accent {
   }
 
   .hero-visual { order: -1; margin-bottom: 2rem; }
-  .hero-mockup { max-width: 320px; }
+  .hero-mockup { 
+    width: 115%;
+    max-width: 368px;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4)) !important;
+  }
 
   .hero-visual .circle-ring, .hero-visual .dots-grid {
     display: none;
