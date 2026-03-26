@@ -92,6 +92,9 @@ ul { list-style: none; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   transition: border-color var(--transition), box-shadow var(--transition);
+  opacity: 0;
+  pointer-events: none;
+  animation: content-fade-in 0.8s ease-in 2.7s forwards;
 }
 .navbar.scrolled {
   border-color: var(--border);
@@ -105,13 +108,8 @@ ul { list-style: none; }
   box-shadow: none !important;
 }
 
-.nav-links, .nav-logo {
-  opacity: 0;
-  animation: content-fade-in 0.8s ease-in 1.5s forwards;
-}
-
 @keyframes content-fade-in {
-  to { opacity: 1; }
+  to { opacity: 1; pointer-events: auto; }
 }
 
 .nav-logo .tupiter-logo {
@@ -625,13 +623,20 @@ h1 {
   .nav-links.open { transform: translateY(0); }
 
   /* Hero */
+  .hero { padding-top: 120px; }
   .hero-content {
     margin-left: 0;
     padding: 2rem 5% 4rem;
     max-width: 100%;
     text-align: center;
   }
-  .hero-cta { justify-content: center; }
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
   .hero-visual { display: none; }
 
   /* About */
