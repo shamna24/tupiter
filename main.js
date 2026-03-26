@@ -111,4 +111,23 @@
   );
   sections.forEach(s => sectionObserver.observe(s));
 
+  /* ---- Hero Parallax effect ---- */
+  const heroSection = document.getElementById('hero');
+  const heroBlobs = document.querySelectorAll('.blob');
+
+  if (heroSection && heroBlobs.length > 0) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const posX = (clientX - centerX) / 50;
+      const posY = (clientY - centerY) / 50;
+
+      heroBlobs.forEach((blob, index) => {
+        const depth = (index + 1) * 0.4;
+        blob.style.transform = `translate(${posX * depth}px, ${posY * depth}px)`;
+      });
+    });
+  }
+
 })();
