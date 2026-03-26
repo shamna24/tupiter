@@ -355,22 +355,23 @@ h1 .accent {
 .mockup-wrapper {
   position: relative;
   z-index: 5;
-  animation: float-slow 4s ease-in-out infinite;
+  animation: float-slow 5s ease-in-out infinite;
   background: transparent !important;
+  border: none !important;
   box-shadow: none !important;
-  left: 20px;
+  left: 40px;
 }
 .hero-mockup {
-  width: 115%;
-  max-width: none;
+  width: 600px;
+  max-width: 50vw;
   height: auto;
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4)) !important;
+  filter: drop-shadow(0 0 30px rgba(0, 102, 204, 0.25)) !important;
 }
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(15px); }
 }
 
 .circle-ring {
@@ -724,10 +725,10 @@ h1 .accent {
 
   .hero-visual { order: -1; margin-bottom: 2rem; }
   .hero-mockup { 
-    width: 115%;
-    max-width: 368px;
+    width: 100%;
+    max-width: 300px;
     mix-blend-mode: multiply;
-    filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4)) !important;
+    filter: drop-shadow(0 0 30px rgba(0, 102, 204, 0.25)) !important;
   }
 
   .hero-visual .circle-ring, .hero-visual .dots-grid {
