@@ -601,43 +601,63 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  section { padding: 72px 0; }
+  section { padding: 60px 0; }
 
-  /* Navbar */
-  .hamburger { display: flex; }
+  /* Navbar Restoration */
+  .navbar { padding: 0 40px !important; }
+  .hamburger { display: none !important; }
   .nav-links {
-    position: fixed;
-    top: 68px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    flex-direction: column;
-    padding: 1.5rem 5%;
-    gap: 1.2rem;
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-110%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 99;
-    box-shadow: 0 8px 24px rgba(26,95,189,0.08);
-  }
-  .nav-links.open { transform: translateY(0); }
-
-  /* Hero */
-  .hero { padding-top: 120px; }
-  .hero-content {
-    margin-left: 0;
-    padding: 2rem 5% 4rem;
-    max-width: 100%;
-    text-align: center;
-  }
-  .hero-cta {
+    position: static;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    gap: 1.2rem;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    opacity: 1;
+    pointer-events: auto;
+    animation: none;
   }
-  .hero-visual { display: none; }
+  .nav-links a { font-size: 0.8rem; color: var(--text-mid); }
+  .btn-nav { padding: 0.4rem 1rem; font-size: 0.75rem !important; }
+
+  /* Hero Spaciousness */
+  .hero { padding-top: 148px; min-height: auto; }
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 90%;
+    padding: 0;
+  }
+  h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.1; }
+  .hero-sub { font-size: 1.1rem; margin-bottom: 2.5rem; }
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .hero-cta .btn-primary, .hero-cta .btn-ghost {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  /* Background Graphic */
+  .hero-visual {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.12;
+    pointer-events: none;
+  }
 
   /* About */
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -660,7 +680,7 @@ h1 {
   #splash-logo { width: 150px; }
   @keyframes logo-center-to-corner {
     0%  { opacity: 1; transform: translateX(0) translateY(0) scale(1); }
-    100%{ opacity: 0; transform: translateX(calc(-50vw + 80px)) translateY(calc(-50vh + 30px)) scale(0.36); }
+    100%{ opacity: 1; transform: translateX(calc(-50vw + 110px)) translateY(calc(-50vh + 34px)) scale(0.64); }
   }
 }
 
