@@ -1141,9 +1141,16 @@ h1 {
     margin-bottom: 0;
   }
 
+  .visual-wrapper {
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
   .hero-main-img {
-    max-width: 80%;
+    max-width: 100%; /* Take full width to look less like a small frame */
     margin: 0 auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); /* Subtle shadow on image only */
   }
   
   .hero-lead {
