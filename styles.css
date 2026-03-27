@@ -195,10 +195,25 @@ ul { list-style: none; }
 }
 
 .menu-toggle .line {
-  width: 24px;
+  width: 28px;
   height: 2px;
-  background: #1a1a1a;
+  background: var(--bg);
   transition: var(--transition);
+  transform-origin: center;
+}
+
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: var(--white);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+  background: var(--white);
 }
 
 /* ============================================================
@@ -1192,25 +1207,46 @@ h1 {
   .nav-menu {
     display: none;
     position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg);
+    inset: 0;
+    background: #131f3d; /* Solid deep blue */
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
-    z-index: 999;
+    z-index: 2000;
   }
   
-  .nav-menu.open { display: flex; }
+  .nav-menu.open { 
+    display: flex; 
+    animation: menuFadeIn 0.3s ease forwards;
+  }
   
   .nav-list {
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
   }
+
+  .nav-item {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+  }
   
-  .menu-toggle { display: flex; }
+  .menu-toggle { 
+    display: flex; 
+    position: relative;
+    z-index: 2100;
+  }
+
+  .menu-toggle.active .line {
+    background: var(--white);
+  }
+
+  @keyframes menuFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
 /* Glassmorphism Refinement */
