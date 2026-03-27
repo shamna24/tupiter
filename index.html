@@ -34,7 +34,7 @@
   <header id="navbar" class="glass-nav">
     <div class="container nav-inner">
       <a href="#hero" class="brand">
-        <img src="logo.png" alt="Tupiter" class="nav-logo-img" />
+        <img src="logo.png" alt="Tupiter" class="nav-logo-img" id="nav-logo" />
       </a>
       
       <button class="menu-toggle" id="hamburger" aria-label="Toggle Menu">
@@ -74,7 +74,7 @@
         
         <div class="hero-visual-content">
           <div class="visual-wrapper">
-            <img src="hero_mockup_v3.png" alt="Tupiter Software Interface" class="hero-main-img" />
+            <img src="hero_prime.png" alt="Tupiter Software Interface" class="hero-main-img" />
             <div class="visual-bg-glow"></div>
           </div>
         </div>
@@ -351,49 +351,50 @@
       </div>
     </section>
 
-    <!-- ===== CAREERS ===== -->
-    <section id="careers" class="careers-v2 fade-up" data-reveal>
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section id="careers" class="choices-v2 fade-up" data-reveal>
       <div class="container">
         <div class="section-meta">
-          <span class="tagline">Join the Crew</span>
-          <h2 class="section-title">Build the <span class="text-gradient">Future</span> With Us</h2>
-          <p class="section-lead">We're always looking for talented individuals who are passionate about crafting exceptional digital experiences.</p>
+          <h2 class="section-title">Why Choose <span class="text-gradient">Us?</span></h2>
+          <p class="section-lead">We deliver comprehensive technology solutions that drive digital transformation and business growth.</p>
         </div>
 
-        <div class="jobs-grid">
-          <div class="job-card" data-reveal>
-            <div class="job-header">
-              <span class="job-type">Full-time</span>
-              <h3>Senior Full-Stack Engineer</h3>
+        <div class="choices-grid">
+          <!-- Choice 1 -->
+          <div class="choice-card" data-reveal>
+            <div class="choice-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <p>Help us architect and build scalable web applications using React, Node.js, and Cloud-native technologies.</p>
-            <div class="job-footer">
-              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Remote / Pune</span>
-              <a href="#contact" class="job-link">Apply Now</a>
-            </div>
-          </div>
-
-          <div class="job-card" data-reveal>
-            <div class="job-header">
-              <span class="job-type">Full-time</span>
-              <h3>UI/UX Product Designer</h3>
-            </div>
-            <p>Lead the design direction for our clients, creating intuitive and visually stunning user interfaces.</p>
-            <div class="job-footer">
-              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Remote</span>
+            <div class="choice-body">
+              <h3>Domain-Aligned Expertise</h3>
+              <p>Solutions built with a deep understanding of industry-specific challenges.</p>
             </div>
           </div>
 
-          <div class="job-card" data-reveal>
-            <div class="job-header">
-              <span class="job-type">Contract</span>
-              <h3>DevOps Specialist</h3>
+          <!-- Choice 2 -->
+          <div class="choice-card" data-reveal>
+            <div class="choice-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
             </div>
-            <p>Streamline our CI/CD pipelines and manage cloud infrastructure across multiple AWS/Azure environments.</p>
-            <div class="job-footer">
-              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Hybrid</span>
+            <div class="choice-body">
+              <h3>Modular & Scalable</h3>
+              <p>Architectures that grow and evolve with your business.</p>
             </div>
           </div>
+
+          <!-- Choice 3 -->
+          <div class="choice-card" data-reveal>
+            <div class="choice-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="choice-body">
+              <h3>Global Talent, Local Execution</h3>
+              <p>Powered by an international team of engineers, strategists, and leaders.</p>
+            </div>
+          </div>
+        </div>
+        <div class="choices-cta" data-reveal>
+          <a href="https://linkedin.com/company/tupiter" target="_blank" class="btn btn-primary">Join Us</a>
         </div>
       </div>
     </section>
@@ -452,12 +453,21 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer-v2">
-    <div class="container footer-bottom">
-      <p class="copyright">© 2026 TUPITER. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#hero">Back to Top</a>
+  <footer class="footer-v3">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo-link">
+          <img src="logo.png" alt="Tupiter" class="footer-logo-img">
+        </a>
       </div>
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#services" class="footer-nav-item">Services</a></li>
+          <li><a href="#about" class="footer-nav-item">About Us</a></li>
+          <li><a href="#careers" class="footer-nav-item">Careers</a></li>
+          <li><a href="#blogs" class="footer-nav-item">Blogs</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 
