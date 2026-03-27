@@ -1135,9 +1135,10 @@ h1 {
   }
   
   .hero-visual-content {
-    grid-row: auto; /* Let default flow handle it if text is more important */
-    order: -1;      /* But keep it above text for visual impact */
-    margin-bottom: 2rem;
+    grid-row: auto; 
+    order: 2; /* Move below text (order 1) */
+    margin-top: 3rem;
+    margin-bottom: 0;
   }
 
   .hero-main-img {
