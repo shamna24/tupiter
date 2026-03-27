@@ -109,11 +109,19 @@
       const dot = document.createElement('div');
       dot.classList.add('dot');
       if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetAutoPlay();
+      });
       dotsNav.appendChild(dot);
     });
 
     const dots = Array.from(dotsNav.querySelectorAll('.dot'));
+    
+    // Create Progress Bar
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('carousel-progress-bar');
+    carousel.closest('.carousel-wrapper').appendChild(progressBar);
 
     function updateCarousel() {
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -125,6 +133,14 @@
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
+
+      // Reset progress bar
+      progressBar.style.transition = 'none';
+      progressBar.style.width = '0';
+      setTimeout(() => {
+        progressBar.style.transition = 'width 5s linear';
+        progressBar.style.width = '200px';
+      }, 50);
     }
 
     function goToSlide(index) {
@@ -135,20 +151,46 @@
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateCarousel();
+      resetAutoPlay();
     });
 
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
       updateCarousel();
+      resetAutoPlay();
     });
+
+    // Auto-play logic
+    let autoPlayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      }, 5000);
+    }
+
+    // Initialize first slide progress
+    setTimeout(() => {
+      progressBar.style.transition = 'width 5s linear';
+      progressBar.style.width = '200px';
+    }, 100);
 
     // Touch Support
     let startX = 0;
-    carousel.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    carousel.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      clearInterval(autoPlayInterval);
+    });
     carousel.addEventListener('touchend', e => {
       const endX = e.changedTouches[0].clientX;
       if (startX - endX > 50) nextBtn.click();
       if (endX - startX > 50) prevBtn.click();
+      resetAutoPlay();
     });
   }
 

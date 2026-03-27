@@ -57,7 +57,12 @@
   <main>
     <!-- ===== HERO SECTION ===== -->
     <section id="hero" class="hero-v2">
-      <div class="hero-bg-fx"></div>
+      <div class="hero-bg-fx">
+        <video autoplay muted loop playsinline id="hero-video">
+          <source src="hero_bg.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
       
       <div class="container hero-container">
         <div class="hero-text-content">
@@ -381,8 +386,108 @@
       </div>
     </section>
 
+    <!-- ===== CAREERS ===== -->
+    <section id="careers" class="careers-v2 fade-up" data-reveal>
+      <div class="container">
+        <div class="section-meta">
+          <span class="tagline">Join the Crew</span>
+          <h2 class="section-title">Build the <span class="text-gradient">Future</span> With Us</h2>
+          <p class="section-lead">We're always looking for talented individuals who are passionate about crafting exceptional digital experiences.</p>
+        </div>
+
+        <div class="jobs-grid">
+          <div class="job-card" data-reveal>
+            <div class="job-header">
+              <span class="job-type">Full-time</span>
+              <h3>Senior Full-Stack Engineer</h3>
+            </div>
+            <p>Help us architect and build scalable web applications using React, Node.js, and Cloud-native technologies.</p>
+            <div class="job-footer">
+              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Remote / Pune</span>
+              <a href="#contact" class="job-link">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-card" data-reveal>
+            <div class="job-header">
+              <span class="job-type">Full-time</span>
+              <h3>UI/UX Product Designer</h3>
+            </div>
+            <p>Lead the design direction for our clients, creating intuitive and visually stunning user interfaces.</p>
+            <div class="job-footer">
+              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Remote</span>
+              <a href="#contact" class="job-link">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-card" data-reveal>
+            <div class="job-header">
+              <span class="job-type">Contract</span>
+              <h3>DevOps Specialist</h3>
+            </div>
+            <p>Streamline our CI/CD pipelines and manage cloud infrastructure across multiple AWS/Azure environments.</p>
+            <div class="job-footer">
+              <span class="job-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Hybrid</span>
+              <a href="#contact" class="job-link">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOGS ===== -->
+    <section id="blogs" class="blogs-v2 fade-up" data-reveal>
+      <div class="container">
+        <div class="section-meta">
+          <span class="tagline">Our Journal</span>
+          <h2 class="section-title">Insights & <span class="text-gradient">Innovation</span></h2>
+        </div>
+
+        <div class="blogs-grid">
+          <article class="blog-post" data-reveal>
+            <div class="post-img">
+              <img src="service_1.png" alt="AI in Development" loading="lazy">
+              <span class="post-tag">Technology</span>
+            </div>
+            <div class="post-content">
+              <span class="post-date">March 25, 2026</span>
+              <h3>The Future of Generative AI in Code Mastery</h3>
+              <p>How AI-assisted development is reshaping the way we architect and deliver complex software systems.</p>
+              <a href="#" class="read-more">Read Insight <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-post" data-reveal>
+            <div class="post-img">
+              <img src="service_2.png" alt="Cloud Architecture" loading="lazy">
+              <span class="post-tag">Cloud</span>
+            </div>
+            <div class="post-content">
+              <span class="post-date">March 18, 2026</span>
+              <h3>Scaling Without Friction: A Guide to Multi-Cloud</h3>
+              <p>Key strategies for maintaining performance and reliability when distributing workloads across cloud providers.</p>
+              <a href="#" class="read-more">Read Insight <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-post" data-reveal>
+            <div class="post-img">
+              <img src="service_3.png" alt="UI Design" loading="lazy">
+              <span class="post-tag">Design</span>
+            </div>
+            <div class="post-content">
+              <span class="post-date">March 10, 2026</span>
+              <h3>Principles of Cinematic Web Design in 2026</h3>
+              <p>Why motion, depth, and micro-interactions are becoming the cornerstone of premium digital identities.</p>
+              <a href="#" class="read-more">Read Insight <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== CONTACT ===== -->
-    <section id="contact" class="contact-v2">
+    <section id="contact" class="contact-v2 fade-up" data-reveal>
       <div class="container">
         <div class="contact-glass-box">
           <div class="contact-v2-header">
