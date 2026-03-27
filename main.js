@@ -73,26 +73,6 @@
     });
   });
 
-  // --- Contact Form ---
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('button');
-      const originalText = btn.textContent;
-      
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      // Simulate API call
-      setTimeout(() => {
-        alert('Thank you! Your message has been sent.');
-        contactForm.reset();
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }, 1500);
-    });
-  }
   // --- Services Carousel ---
   const carousel = document.getElementById('services-carousel');
   if (carousel) {
