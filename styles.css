@@ -1069,6 +1069,18 @@ h1 {
    ============================================================ */
 .blogs-v2 { padding: 120px 0; background: var(--bg-alt); }
 
+.blogs-v2 .section-meta .tagline,
+.blogs-v2 .section-meta .section-title,
+.blogs-v2 .section-meta .section-lead {
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
+}
+
+.blogs-v2 .section-title .text-gradient {
+  background: none;
+  -webkit-text-fill-color: #1e3a8a;
+  color: #1e3a8a;
+}
+
 .blogs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1077,7 +1089,7 @@ h1 {
 }
 
 .blog-post {
-  background: #f1f5f9; /* Medium White / Light Slate */
+  background: #f8fafc; /* Lighter Slate for card consistency */
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(59, 130, 246, 0.1);
@@ -1138,11 +1150,12 @@ h1 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: var(--accent); /* Medium Blue */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
 }
 
 .post-content p {
-  color: #2563eb; /* Slightly darker Blue for contrast */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
+  opacity: 0.95;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -1152,14 +1165,14 @@ h1 {
   align-items: center;
   gap: 0.75rem;
   font-weight: 700;
-  color: var(--accent); /* Medium Blue */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   font-size: 0.95rem;
   text-decoration: none;
   transition: var(--transition);
 }
 
 .read-more:hover {
-  color: #1d4ed8;
+  opacity: 0.7;
   gap: 1rem;
 }
 
