@@ -1067,7 +1067,12 @@ h1 {
 /* ============================================================
    BLOGS v2
    ============================================================ */
-.blogs-v2 { padding: 120px 0; background: var(--bg-alt); }
+.blogs-v2 { 
+  padding: 140px 0; 
+  background: linear-gradient(to bottom, #ffffff 360px, var(--bg) 360px);
+  position: relative;
+  z-index: 1;
+}
 
 .blogs-v2 .section-meta .tagline,
 .blogs-v2 .section-meta .section-title,
