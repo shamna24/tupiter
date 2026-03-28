@@ -989,7 +989,7 @@ h1 {
    ============================================================ */
 .join-us-v2 {
   padding: 140px 0;
-  background: var(--bg-alt); /* Cinematic Dark Background to match insights */
+  background: linear-gradient(to bottom, #ffffff 360px, var(--bg) 360px);
   position: relative;
   z-index: 1;
 }
@@ -997,16 +997,14 @@ h1 {
 .join-us-v2 .section-meta .tagline,
 .join-us-v2 .section-meta .section-title,
 .join-us-v2 .section-meta .section-lead {
-  color: var(--white); /* White/Light for Dark Background */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
 }
 
-/* Unified Light Accents for Dark Backgrounds */
-.join-us-v2 .section-title .text-gradient,
-.blogs-v2 .section-title .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Use Medium Dark Blue for solid title appearance */
+.join-us-v2 .section-title .text-gradient {
+  background: none;
+  -webkit-text-fill-color: #1e3a8a;
+  color: #1e3a8a;
 }
 
 .benefit-grid {
@@ -1018,8 +1016,8 @@ h1 {
 
 .benefit-card {
   padding: 3.5rem 2rem;
-  background: rgba(255, 255, 255, 0.03); /* Cinematic Glass */
-  border: 1px solid var(--border);
+  background: #f8fafc; /* Lighter Slate for better contrast */
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 20px;
   text-align: center;
   transition: var(--transition);
@@ -1055,14 +1053,14 @@ h1 {
   font-family: var(--font-head);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--white);
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   margin-bottom: 1rem;
 }
 
 .benefit-card p {
   font-size: 0.95rem;
-  color: var(--text-muted);
-  opacity: 0.9;
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
+  opacity: 0.95;
   line-height: 1.6;
 }
 
@@ -1071,17 +1069,26 @@ h1 {
    ============================================================ */
 .blogs-v2 { padding: 120px 0; background: var(--bg-alt); }
 
-.blogs-v2 .section-meta .tagline,
-.blogs-v2 .section-meta .section-title,
-.blogs-v2 .section-meta .section-lead {
-  color: var(--white);
+.blogs-v2 .section-meta .tagline {
+  color: var(--accent); /* Light Blue */
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.blogs-v2 .section-meta .section-title {
+  color: var(--white); /* Pure White */
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .blogs-v2 .section-title .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-text-fill-color: var(--white);
+  color: var(--white);
+}
+
+.blogs-v2 .section-meta .section-lead {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .blogs-grid {
@@ -1092,10 +1099,10 @@ h1 {
 }
 
 .blog-post {
-  background: rgba(255, 255, 255, 0.03); /* Cinematic Glass Post */
+  background: #f8fafc; /* Lighter Slate for card consistency */
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   transition: var(--transition);
 }
 
@@ -1153,11 +1160,11 @@ h1 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: var(--white);
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
 }
 
 .post-content p {
-  color: var(--text-muted);
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   opacity: 0.95;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -1168,7 +1175,7 @@ h1 {
   align-items: center;
   gap: 0.75rem;
   font-weight: 700;
-  color: var(--accent);
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   font-size: 0.95rem;
   text-decoration: none;
   transition: var(--transition);
