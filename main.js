@@ -174,46 +174,5 @@
     });
   }
 
-  // --- Startup / Splash Animation ---
-  window.addEventListener('load', () => {
-    const splash = document.getElementById('intro-splash');
-    const splashLogo = document.getElementById('splash-logo');
-    const navbar = document.getElementById('navbar');
-    const navLogo = document.getElementById('nav-logo');
-    const brand = document.querySelector('.brand');
-
-    if (!splash || !splashLogo || !navLogo) return;
-
-    // Step 1: Reveal logo in center
-    setTimeout(() => {
-      splashLogo.classList.add('active');
-    }, 400);
-
-    // Step 2: Animate to Navbar
-    setTimeout(() => {
-      // Re-measure in case of resize or late layout
-      const splashRect = splashLogo.getBoundingClientRect();
-      const navRect = navLogo.getBoundingClientRect();
-
-      // Calculate translation relative to current center
-      const deltaX = navRect.left + (navRect.width / 2) - (splashRect.left + (splashRect.width / 2));
-      const deltaY = navRect.top + (navRect.height / 2) - (splashRect.top + (splashRect.height / 2));
-      
-      const scale = navRect.height / splashRect.height;
-
-      splashLogo.style.setProperty('--target-x', `${deltaX}px`);
-      splashLogo.style.setProperty('--target-y', `${deltaY}px`);
-      splashLogo.style.setProperty('--target-scale', scale);
-      
-      splashLogo.classList.add('move');
-      navbar.classList.add('visible');
-    }, 1600);
-
-    // Step 3: Handoff and Fade Splash
-    setTimeout(() => {
-      brand.classList.add('visible');
-      splash.classList.add('hidden');
-    }, 2400);
-  });
 
 })();

@@ -47,6 +47,10 @@ ul { list-style: none; }
   padding: 0 2rem;
 }
 
+.nav-inner.container {
+  padding: 0 1rem; /* Reduced padding for more horizontal space */
+}
+
 .text-gradient {
   background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
   -webkit-background-clip: text;
@@ -54,60 +58,6 @@ ul { list-style: none; }
   background-clip: text;
 }
 
-/* ============================================================
-   INTRO SPLASH v2 (Responsive & Premium)
-   ============================================================ */
-#intro-splash {
-  position: fixed;
-  inset: 0;
-  background: #ffffff;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
-}
-
-#intro-splash.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-#splash-logo {
-  width: 280px; 
-  height: auto;
-  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.15));
-  opacity: 0;
-  transform: scale(0.8);
-  transition: 
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1s cubic-bezier(0.65, 0, 0.35, 1);
-  z-index: 10001;
-}
-
-#splash-logo.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-#splash-logo.move {
-  transform: translate(var(--target-x, 0), var(--target-y, 0)) scale(var(--target-scale, 0.35));
-}
-
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes hero-image-reveal {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fade-in {
-  to { opacity: 1; }
-}
 
 /* ============================================================
    NAVIGATION v2
@@ -125,7 +75,7 @@ ul { list-style: none; }
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.6s ease;
 }
 
@@ -141,8 +91,14 @@ ul { list-style: none; }
 }
 
 .brand {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: transform 0.3s ease;
+  animation: logo-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes logo-reveal {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .brand.visible {
@@ -153,12 +109,27 @@ ul { list-style: none; }
   height: 28px;
   width: auto;
   filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand:hover .nav-logo-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
 }
 
 .nav-list {
   display: flex;
   align-items: center;
   gap: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  animation: nav-reveal 0.8s ease 1s forwards; /* 1s delay */
+}
+
+@keyframes nav-reveal {
+  0% { opacity: 0; visibility: hidden; transform: translateY(-10px); }
+  1% { visibility: visible; }
+  100% { opacity: 1; visibility: visible; transform: translateY(0); }
 }
 
 .nav-item {
@@ -289,9 +260,9 @@ ul { list-style: none; }
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.2fr 0.8fr; /* More space for the left content */
   align-items: center;
-  gap: 4rem;
+  gap: 2rem; /* Reduced gap to bring content more to the left */
 }
 
 .badge-reveal {
@@ -313,6 +284,14 @@ ul { list-style: none; }
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.hero-text-content {
+  margin-left: -3rem; /* Shifted left */
+}
+
+@media (max-width: 1024px) {
+  .hero-text-content { margin-left: 0; }
 }
 
 h1 {
@@ -821,11 +800,10 @@ h1 {
    FOOTER v3 — Navigation Focused (Minimalist White)
    ============================================================ */
 .footer-v3 {
-  padding: 40px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
-  background: #f1f5f9; /* Medium White / Light Slate */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 60px 0;
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+  background: #ffffff;
+  position: relative;
 }
 
 .footer-content {
@@ -836,9 +814,10 @@ h1 {
 }
 
 .footer-logo-img {
-  height: 24px;
+  height: 32px;
   width: auto;
-  opacity: 0.9;
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.1));
   transition: var(--transition);
 }
 
@@ -858,15 +837,16 @@ h1 {
 
 .footer-nav-item {
   font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #475569;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
   transition: var(--transition);
 }
 
 .footer-nav-item:hover {
-  color: var(--accent);
+  opacity: 0.7;
+  transform: translateY(-2px);
 }
 
 
@@ -1009,7 +989,7 @@ h1 {
    ============================================================ */
 .join-us-v2 {
   padding: 140px 0;
-  background: linear-gradient(to bottom, #ffffff 380px, var(--bg) 380px);
+  background: linear-gradient(to bottom, #ffffff 360px, var(--bg) 360px);
   position: relative;
   z-index: 1;
 }
@@ -1017,10 +997,10 @@ h1 {
 .join-us-v2 .section-meta .tagline,
 .join-us-v2 .section-meta .section-title,
 .join-us-v2 .section-meta .section-lead {
-  color: #1e3a8a; /* Deep Cobalt Blue - Authoritative */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
 }
 
-/* Use Deep Cobalt for solid title appearance */
+/* Use Medium Dark Blue for solid title appearance */
 .join-us-v2 .section-title .text-gradient {
   background: none;
   -webkit-text-fill-color: #1e3a8a;
@@ -1036,8 +1016,8 @@ h1 {
 
 .benefit-card {
   padding: 3.5rem 2rem;
-  background: #f1f5f9; /* Medium White */
-  border: 1px solid rgba(30, 58, 138, 0.1);
+  background: #f8fafc; /* Lighter Slate for better contrast */
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 20px;
   text-align: center;
   transition: var(--transition);
@@ -1046,14 +1026,14 @@ h1 {
 
 .benefit-card:hover {
   transform: translateY(-12px);
-  border-color: #1e3a8a;
+  border-color: var(--accent);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .benefit-icon {
   width: 56px;
   height: 56px;
-  background: rgba(30, 58, 138, 0.08);
+  background: rgba(30, 58, 138, 0.08); /* Reverting to dark blue tint */
   color: #1e3a8a;
   border-radius: 16px;
   display: flex;
@@ -1073,13 +1053,13 @@ h1 {
   font-family: var(--font-head);
   font-size: 1.3rem;
   font-weight: 700;
-  color: #1e3a8a; /* Deep Cobalt Blue */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   margin-bottom: 1rem;
 }
 
 .benefit-card p {
   font-size: 0.95rem;
-  color: #1e3a8a; /* Deep Cobalt Blue */
+  color: #1e3a8a; /* Reverting to Medium Dark Blue */
   opacity: 0.95;
   line-height: 1.6;
 }
