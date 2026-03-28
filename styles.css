@@ -1017,14 +1017,14 @@ h1 {
 .join-us-v2 .section-meta .tagline,
 .join-us-v2 .section-meta .section-title,
 .join-us-v2 .section-meta .section-lead {
-  color: var(--bg); /* Deep Navy Brand Blue */
+  color: #1e3a8a; /* Deep Cobalt Blue - Authoritative */
 }
 
-/* Remove text-gradient and use solid deep brand blue for title */
+/* Use Deep Cobalt for solid title appearance */
 .join-us-v2 .section-title .text-gradient {
   background: none;
-  -webkit-text-fill-color: var(--bg);
-  color: var(--bg);
+  -webkit-text-fill-color: #1e3a8a;
+  color: #1e3a8a;
 }
 
 .benefit-grid {
@@ -1037,7 +1037,7 @@ h1 {
 .benefit-card {
   padding: 3.5rem 2rem;
   background: #f1f5f9; /* Medium White */
-  border: 1px solid rgba(19, 31, 61, 0.1);
+  border: 1px solid rgba(30, 58, 138, 0.1);
   border-radius: 20px;
   text-align: center;
   transition: var(--transition);
@@ -1046,15 +1046,15 @@ h1 {
 
 .benefit-card:hover {
   transform: translateY(-12px);
-  border-color: var(--accent);
+  border-color: #1e3a8a;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .benefit-icon {
   width: 56px;
   height: 56px;
-  background: rgba(59, 130, 246, 0.08);
-  color: var(--accent);
+  background: rgba(30, 58, 138, 0.08);
+  color: #1e3a8a;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -1064,7 +1064,7 @@ h1 {
 }
 
 .benefit-card:hover .benefit-icon {
-  background: var(--accent);
+  background: #1e3a8a;
   color: var(--white);
   transform: rotate(10deg);
 }
@@ -1073,14 +1073,14 @@ h1 {
   font-family: var(--font-head);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--bg); /* Deep Navy Brand Blue */
+  color: #1e3a8a; /* Deep Cobalt Blue */
   margin-bottom: 1rem;
 }
 
 .benefit-card p {
   font-size: 0.95rem;
-  color: var(--bg); /* Deep Navy Brand Blue */
-  opacity: 0.85;
+  color: #1e3a8a; /* Deep Cobalt Blue */
+  opacity: 0.95;
   line-height: 1.6;
 }
 
