@@ -715,6 +715,7 @@ h1 {
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 0 20px var(--accent-glow);
+  color: var(--white);
 }
 
 .c-dots {
@@ -1086,18 +1087,6 @@ h1 {
   .feature-grid {
     align-items: center;
   }
-
-  .blogs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .benefit-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .choices-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -1124,18 +1113,6 @@ h1 {
 
   .hero-container {
     padding-top: 4rem;
-  }
-
-  .blogs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .benefit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .choices-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1573,7 +1550,21 @@ h1 {
 /* ============================================================
    RESPONSIVE OVERRIDES
    ============================================================ */
+@media (max-width: 1024px) {
+  /* Removed intermediate tablet grid overrides to maintain strict row layouts until mobile */
+}
+
 @media (max-width: 768px) {
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+  .choices-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .hero-v2 {
     min-height: 80vh;
     /* Reduced height to ensure content fits better */
