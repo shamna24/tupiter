@@ -1176,7 +1176,7 @@ h1 {
 }
 
 .choice-card {
-  background: #0a0871;
+  background: #040338;
   /* White card for visibility over white gradient bottom */
   border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 24px;
@@ -1253,6 +1253,20 @@ h1 {
   letter-spacing: 1px;
 }
 
+.join-us-cta .btn {
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 100px; /* curved edges */
+  box-shadow: 0 10px 25px var(--accent-glow);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.join-us-cta .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px var(--accent-glow);
+}
+
 /* ============================================================
    WHY JOIN US? v2 (Careers)
    ============================================================ */
@@ -1265,7 +1279,7 @@ h1 {
     /* Layer 2: Soft Center Glow & Edge Vignette */
     radial-gradient(circle at 50% 60%, rgba(59, 130, 246, 0.15) 0%, transparent 60%, rgba(30, 58, 138, 0.2) 100%),
     /* Layer 3: Blended Linear Transition (Reversed) */
-    linear-gradient(to bottom, #1e3a8a 0%, #2563eb 55%, #ffffff 100%);
+    linear-gradient(to bottom, #040338 0%, #1747ad 55%, #ffffff 100%);
 
   background-blend-mode: overlay, normal, normal;
   position: relative;
@@ -1280,14 +1294,14 @@ h1 {
 
 .join-us-v2 .section-meta .section-title,
 .join-us-v2 .section-meta .section-lead {
-  color: #1e3a8a;
+  color: #ffffff;
   /* Deep Cobalt for readability on white top */
 }
 
 /* Ensure title gradient is overridden for solid dark blue appearance */
 .join-us-v2 .section-title .text-gradient {
   background: none;
-  -webkit-text-fill-color: #1e3a8a;
+  -webkit-text-fill-color: #ffffff;
   color: #1e3a8a;
 }
 
