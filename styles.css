@@ -616,7 +616,7 @@ h1 {
   /* Offset to overlap image */
   background: #ffffff;
   /* Pure White Card */
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #1e3a8a;
   border-radius: 28px;
   padding: 2.5rem;
   max-width: 380px;
@@ -1086,6 +1086,10 @@ h1 {
   .feature-grid {
     align-items: center;
   }
+
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1112,6 +1116,10 @@ h1 {
 
   .hero-container {
     padding-top: 4rem;
+  }
+
+  .blogs-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1400,7 +1408,7 @@ h1 {
 
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   margin-top: 5rem;
 }
