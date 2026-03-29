@@ -1090,6 +1090,14 @@ h1 {
   .blogs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1119,6 +1127,14 @@ h1 {
   }
 
   .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choices-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1178,7 +1194,7 @@ h1 {
 
 .choices-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 5rem;
 }
@@ -1315,7 +1331,7 @@ h1 {
 
 .benefit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   margin-top: 5rem;
 }
