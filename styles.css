@@ -985,7 +985,7 @@ h1 {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--accent);
+  color: #1e3a8a;
   letter-spacing: 0.02em;
   transition: var(--transition);
 }
@@ -1257,7 +1257,8 @@ h1 {
 .join-us-cta .btn {
   background: var(--accent);
   color: var(--white);
-  border-radius: 100px; /* curved edges */
+  border-radius: 100px;
+  /* curved edges */
   box-shadow: 0 10px 25px var(--accent-glow);
   transition: var(--transition);
   display: inline-block;
@@ -1558,13 +1559,15 @@ h1 {
   .blogs-grid {
     grid-template-columns: 1fr;
   }
+
   .benefit-grid {
     grid-template-columns: 1fr;
   }
+
   .choices-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero-v2 {
     min-height: 80vh;
     /* Reduced height to ensure content fits better */
