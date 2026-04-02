@@ -70,8 +70,14 @@ ul {
 }
 
 .nav-inner.container {
-  padding: 0 1rem;
-  /* Reduced padding for more horizontal space */
+  padding: 0 1.5rem;
+  max-width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .nav-inner.container {
+    padding: 0 4rem;
+  }
 }
 
 .text-gradient {
